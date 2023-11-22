@@ -1,18 +1,19 @@
 // function implementation
 // establishes a connection with the game server
 const net = require("net");
+const { IP, PORT, ENCODE } = require("./constants");
 
 let conn;
 
 const connect = function() {
   // create connection
   const conn = net.createConnection({
-    host: '165.227.47.243',
-    port: 50541
+    host: IP,
+    port: PORT
   });
 
   // interpret incoming data as text
-  conn.setEncoding("utf8");
+  conn.setEncoding(ENCODE);
 
   // event listener for incoming data
   conn.on("data", (data) => {
