@@ -22,7 +22,8 @@ const connect = function() {
   // event listeners for when connection is successful
   conn.on("connect", () => {
     console.log("Successfully connected to the game");
-    conn.write("Name: EVQ");
+    conn.write("Name: CVQ");
+    setInterval(speak,500,conn);
   });
 
   // event listeners for when connection is closed
@@ -31,6 +32,10 @@ const connect = function() {
   });
 
   return conn;
+};
+
+const speak = (conn) => {
+  conn.write("Say: nom nom nom");
 };
 
 module.exports = {
