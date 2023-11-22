@@ -3,7 +3,7 @@
 const net = require("net");
 const { IP, PORT, ENCODE } = require("./constants");
 
-let conn;
+//let conn;
 
 const connect = function() {
   // create connection
@@ -24,7 +24,7 @@ const connect = function() {
   conn.on("connect", () => {
     console.log("Successfully connected to the game");
     conn.write("Name: CVQ");
-    setInterval(speak,500,conn);
+    setInterval(speak,5000,conn);
   });
 
   // event listeners for when connection is closed
@@ -41,4 +41,4 @@ const speak = (conn) => {
 
 module.exports = {
   connect
-}
+};
