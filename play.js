@@ -1,8 +1,7 @@
-// Importing required functions
-const connect = require('./client');
+const {connect} = require("./client");
+const {setupInput} = require("./input");
 
-// Attempt to connect
+console.log("Connecting ...");
 connect();
 
-
-
+setupInput();
